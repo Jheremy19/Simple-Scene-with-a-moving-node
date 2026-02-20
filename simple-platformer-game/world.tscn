@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c2akv47mklqkw"]
+
+[ext_resource type="PackedScene" uid="uid://lswr4bf0r3wf" path="res://Scenes/player.tscn" id="1_f3sb7"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_f3sb7"]
+size = Vector2(1000, 100)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7yv"]
+size = Vector2(1001, 102)
+
+[node name="World" type="Node2D" unique_id=143918031]
+position = Vector2(587, 573)
+
+[node name="Player" parent="." unique_id=492465643 instance=ExtResource("1_f3sb7")]
+position = Vector2(-12, -428)
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1894462323]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform" unique_id=1458814313]
+modulate = Color(0.1, 0.1, 0.1, 1)
+mesh = SubResource("QuadMesh_f3sb7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=661460332]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_fj7yv")
